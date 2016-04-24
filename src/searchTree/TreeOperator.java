@@ -4,8 +4,8 @@ import nodeGenerationPackg.NodeGenerator;
 
 public class TreeOperator<E extends SearchState, Action extends AbstractAction<E>> {
 
-	private final int noOfGenerChild = 300;
-	private final int noOfParents = 300;
+	private final int noOfGenerChild = 1000;
+	private final int noOfParents = 30;
 	private TreeNode<E, Action> rootNode;
 	private SearchTree<E, Action> searchTree;
 	private NodeGenerator<E, Action> generator;

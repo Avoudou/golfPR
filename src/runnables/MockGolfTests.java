@@ -18,7 +18,7 @@ public class MockGolfTests {
 	public static void main(String[] args) {
 
 
-		Vector2 startPosit = new Vector2(0, 20);
+		Vector2 startPosit = new Vector2(0, 100);
 		Vector2 targetPosit = new Vector2(0, 0);
 
 		GolfBall ball = new GolfBall(startPosit);
@@ -32,6 +32,7 @@ public class MockGolfTests {
 		rootNode.setState(rootState);
 		rootNode.setNodeDeapth(0);
 
+
 		GolfTestGenerator generator = new GolfTestGenerator();
 		GolfTestGoalChecker goalTester = new GolfTestGoalChecker();
 
@@ -39,13 +40,17 @@ public class MockGolfTests {
 				rootNode, generator, goalTester);
 		TreeNode<GolfTestState, GolfTestAction> solutionNode = treeOperator.runSearch();
 		GolfTestEvaluator evaluator = new GolfTestEvaluator();
+		rootNode.setValueOfNode(evaluator.evaluateNode(rootNode));
+
 		System.out.println("Found sol at depth " + solutionNode.getNodeDeapth() + " " + "GoalState="
-				+ solutionNode.getState().getBall().getBallPosition());
+				+ solutionNode.getState().getBall().getBallPosition() + " evaluationOFposition = "
+				+ solutionNode.getValueOfNode());
 		TreeNode<GolfTestState, GolfTestAction> tempNode = solutionNode;
 		while (tempNode.getParent() != null) {
 
-			System.out.println(tempNode.getParent().getState().getBall().getBallPosition() + "value  ="
-					+ tempNode.getValueOfNode());
+			System.out.println("ballPosition at step : " + tempNode.getParent().getNodeDeapth() + "  ="
+					+ tempNode.getParent().getState().getBall().getBallPosition() + " value  ="
+					+ tempNode.getParent().getValueOfNode());
 			tempNode = tempNode.getParent();
 		}
 

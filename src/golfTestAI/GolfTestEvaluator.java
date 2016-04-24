@@ -12,7 +12,7 @@ public class GolfTestEvaluator extends NodeEvaluator<GolfTestState> {
 	public double evaluateNode(TreeNode<GolfTestState, ?> aNode) {
 
 		GolfTestState aState = aNode.getState();
-		Vector2 difference = aState.getCourt().getHole().getPossition().sub(aState.getBall().getBallPosition());
+		Vector2 difference = aState.getCourt().getHole().getPossition().cpy().sub(aState.getBall().getBallPosition());
 
 		return difference.len();
 	}
