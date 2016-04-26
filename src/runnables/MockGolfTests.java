@@ -16,15 +16,19 @@ public class MockGolfTests {
 	public static void main(String[] args) {
 
 
-		Vector2 startPosit = new Vector2(100, 100);
+		Vector2 startPosit = new Vector2(100, -50);
 		Vector2 targetPosit = new Vector2(-230, 60);
 
 		GolfBall ball = new GolfBall(startPosit);
 		GolfHole target = new GolfHole(targetPosit);
 		GolfCourt court = new GolfCourt(target);
 		court.setHole(target);
-		GolfToxicArea toxicArea = new GolfToxicArea(65, 200, new Vector2(-200, 0));
+		GolfToxicArea toxicArea = new GolfToxicArea(65, 200, new Vector2(-200, -150));
+		GolfToxicArea toxicArea2 = new GolfToxicArea(65, 200, new Vector2(-100, 80));
+		GolfToxicArea toxicArea3 = new GolfToxicArea(65, 200, new Vector2(-0, -100));
 		court.addToxicArea(toxicArea);
+		court.addToxicArea(toxicArea2);
+		court.addToxicArea(toxicArea3);
 		System.out.println(court.getToxicAreasList().get(0).getToxicArea());
 
 		GolfTestFrame window = new GolfTestFrame(court, ball);

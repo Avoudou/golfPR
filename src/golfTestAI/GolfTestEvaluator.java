@@ -15,10 +15,11 @@ public class GolfTestEvaluator extends NodeEvaluator<GolfTestState> {
 
 
 		Vector2 difference = aState.getCourt().getHole().getPossition().cpy().sub(aState.getBall().getBallPosition());
-
-		if (aState.getCourt().getToxicAreasList().get(0).getToxicArea()
+		for (int i = 0; i < aState.getCourt().getToxicAreasList().size(); i++) {
+			if (aState.getCourt().getToxicAreasList().get(i).getToxicArea()
 				.contains(aState.getBall().getBallPosition().x, aState.getBall().getBallPosition().y)) {
 			return Integer.MAX_VALUE;
+		}
 		}
 
 		return difference.len();

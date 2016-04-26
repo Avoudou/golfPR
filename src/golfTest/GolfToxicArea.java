@@ -7,8 +7,14 @@ public class GolfToxicArea {
 
 	private Polygon toxicArea;
 	private Vector2 possition;
+	private int xDim;
+	private int yDim;
 
 	public GolfToxicArea(float xDim, float yDim, Vector2 possition) {
+
+		this.setxDim((int) xDim);
+		this.setyDim((int) yDim);
+
 		float[] anArray = new float[8];
 
 		anArray[0] = 0;
@@ -30,5 +36,21 @@ public class GolfToxicArea {
 
 	public Vector2 getPossition() {
 		return possition;
+	}
+
+	public int getxDim() {
+		return xDim;
+	}
+
+	public void setxDim(int xDim) {
+		this.xDim = xDim;
+	}
+
+	public int getyDim() {
+		return yDim;
+	}
+
+	private void setyDim(int yDim) {
+		this.yDim = yDim;
 	}
 }

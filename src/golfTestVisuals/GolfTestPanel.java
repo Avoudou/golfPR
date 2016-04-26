@@ -67,9 +67,14 @@ public class GolfTestPanel extends JPanel {
 	}
 
 	public void drawToxicArea(Graphics graph) {
+		
+		
 		graph.setColor(Color.RED);
-		graph.fillRect((int) (courtCenterX + court.getToxicAreasList().get(0).getPossition().x),
-				(int) (courtCenterY + court.getToxicAreasList().get(0).getPossition().y), 65, 200);
+		for(int i=0;i<court.getToxicAreasList().size();i++){
+		graph.fillRect((int) (courtCenterX + court.getToxicAreasList().get(i).getPossition().x),
+					(int) (courtCenterY + court.getToxicAreasList().get(i).getPossition().y), court.getToxicAreasList()
+							.get(i).getxDim(), court.getToxicAreasList().get(i).getyDim());
+		}
 	}
 
 	class CustomKeyListener implements KeyListener {
@@ -120,3 +125,4 @@ public class GolfTestPanel extends JPanel {
 
 	}
 }
+
