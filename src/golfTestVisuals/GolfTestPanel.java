@@ -49,6 +49,7 @@ public class GolfTestPanel extends JPanel {
 		graph.setColor(Color.GREEN);
 		graph.fillOval(0, 0, court.getDiameter(), court.getDiameter());
 		drawTargetArea(graph);
+		drawToxicArea(graph);
 	}
 
 	public void drawBall(Graphics graph) {
@@ -60,9 +61,15 @@ public class GolfTestPanel extends JPanel {
 
 	public void drawTargetArea(Graphics graph) {
 		graph.setColor(Color.BLACK);
-		graph.fillOval((int) (courtCenterX + court.getHole().getPossition().x), (int) (courtCenterY + court.getHole()
-				.getPossition().y), 20, 20);
+		graph.fillOval((int) (courtCenterX + court.getHole().getPossition().x) - 10, (int) (courtCenterY + court
+				.getHole().getPossition().y) - 10, 20, 20);
 
+	}
+
+	public void drawToxicArea(Graphics graph) {
+		graph.setColor(Color.RED);
+		graph.fillRect((int) (courtCenterX + court.getToxicAreasList().get(0).getPossition().x),
+				(int) (courtCenterY + court.getToxicAreasList().get(0).getPossition().y), 50, 400);
 	}
 
 	class CustomKeyListener implements KeyListener {
@@ -95,6 +102,8 @@ public class GolfTestPanel extends JPanel {
 					Force forceToNext = new Force(tempNode.getAction().getForce().getForce().cpy());
 					MovesManager moveManager = new MovesManager();
 					moveManager.applyForce(forceToNext, ball);
+				// GolfTestGoalChecker checkGoal = new GolfTestGoalChecker();
+				// System.out.println(checkGoal.test(tempNode.getState()));
 
 					repaint();
 

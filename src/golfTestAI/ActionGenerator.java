@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 public class ActionGenerator {
 
 	// private final int maxForceValue = 14;
-	private final int maxXYcoordinate = 20;
+	private final int maxXYcoordinate = 30;
 
 	public Force generateRandomForce() {
 

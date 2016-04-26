@@ -2,7 +2,6 @@ package golfTestAI;
 
 import golfTest.GolfBall;
 import golfTest.GolfCourt;
-import golfTest.GolfHole;
 import searchTree.SearchState;
 
 import com.badlogic.gdx.math.Vector2;
@@ -34,7 +33,7 @@ public class GolfTestState extends SearchState {
 
 	public GolfTestState cloneState() {
 		GolfBall newBall = new GolfBall(new Vector2(ball.getBallPosition()));
-		GolfCourt newCourt = new GolfCourt(new GolfHole(new Vector2(court.getHole().getPossition())));
+		GolfCourt newCourt = court.clone();
 		GolfTestState cloneState = new GolfTestState(newBall, newCourt);
 		return cloneState;
 	}
