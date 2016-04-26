@@ -23,7 +23,7 @@ public class MockGolfTests {
 		GolfHole target = new GolfHole(targetPosit);
 		GolfCourt court = new GolfCourt(target);
 		court.setHole(target);
-		GolfToxicArea toxicArea = new GolfToxicArea(50, 200, new Vector2(-200, 0));
+		GolfToxicArea toxicArea = new GolfToxicArea(65, 200, new Vector2(-200, 0));
 		court.addToxicArea(toxicArea);
 		System.out.println(court.getToxicAreasList().get(0).getToxicArea());
 

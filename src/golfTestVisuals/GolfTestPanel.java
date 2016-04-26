@@ -69,7 +69,7 @@ public class GolfTestPanel extends JPanel {
 	public void drawToxicArea(Graphics graph) {
 		graph.setColor(Color.RED);
 		graph.fillRect((int) (courtCenterX + court.getToxicAreasList().get(0).getPossition().x),
-				(int) (courtCenterY + court.getToxicAreasList().get(0).getPossition().y), 50, 200);
+				(int) (courtCenterY + court.getToxicAreasList().get(0).getPossition().y), 65, 200);
 	}
 
 	class CustomKeyListener implements KeyListener {
