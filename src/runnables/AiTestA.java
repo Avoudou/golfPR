@@ -2,38 +2,38 @@ package runnables;
 
 import searchTree.TreeNode;
 import searchTree.TreeOperator;
-import testClasses.DoubleNodeTestEvaluator;
-import testClasses.DoubleTestGoalAchieved;
-import testClasses.DoubleValueAction;
-import testClasses.DoubleValueTestGenerator;
-import testClasses.DoubleValueTestState;
+import testClasses.IntegerNodeTestEvaluator;
+import testClasses.IntegerTestGoalAchieved;
+import testClasses.IntegerValueAction;
+import testClasses.IntegerValueTestGenerator;
+import testClasses.IntegerValueTestState;
 
 public class AiTestA {
 
 	public static void main(String[] args) {
-		DoubleValueTestState rootState = new DoubleValueTestState(500);
-		TreeNode<DoubleValueTestState, DoubleValueAction> rootNode = new TreeNode<DoubleValueTestState, DoubleValueAction>(
+		IntegerValueTestState rootState = new IntegerValueTestState(500);
+		TreeNode<IntegerValueTestState, IntegerValueAction> rootNode = new TreeNode<IntegerValueTestState, IntegerValueAction>(
 				null);
 		rootNode.setState(rootState);
 		rootNode.setNodeDeapth(0);
 
-		DoubleNodeTestEvaluator evaluator = new DoubleNodeTestEvaluator(rootNode);
+		IntegerNodeTestEvaluator evaluator = new IntegerNodeTestEvaluator(rootNode);
 		evaluator.evaluateNode(rootNode);
-		DoubleTestGoalAchieved goalTest = new DoubleTestGoalAchieved();
-		DoubleValueTestGenerator generator = new DoubleValueTestGenerator(evaluator);
+		IntegerTestGoalAchieved goalTest = new IntegerTestGoalAchieved();
+		IntegerValueTestGenerator generator = new IntegerValueTestGenerator(evaluator);
 
-		TreeOperator<DoubleValueTestState, DoubleValueAction> mySearchTree = new TreeOperator<DoubleValueTestState, DoubleValueAction>(
+		TreeOperator<IntegerValueTestState, IntegerValueAction> mySearchTree = new TreeOperator<IntegerValueTestState, IntegerValueAction>(
 				rootNode, generator, goalTest);
 		System.out.println(mySearchTree.getTree().getRootNode());
 
-		TreeNode<DoubleValueTestState, DoubleValueAction> solutionNode = mySearchTree.runSearch();
+		TreeNode<IntegerValueTestState, IntegerValueAction> solutionNode = mySearchTree.runSearch();
 
 		System.out.println("Found sol at depth " + solutionNode.getNodeDeapth() + " " + "GoalState="
-				+ solutionNode.getState().getDoubleValue());
-		TreeNode<DoubleValueTestState, DoubleValueAction> tempNode = solutionNode;
+				+ solutionNode.getState().getintValue());
+		TreeNode<IntegerValueTestState, IntegerValueAction> tempNode = solutionNode;
 		while (tempNode.getParent() != null) {
 
-			System.out.println(tempNode.getParent().getState().getDoubleValue());
+			System.out.println(tempNode.getParent().getState().getintValue());
 			tempNode = tempNode.getParent();
 		}
 		// TreeNode<DoubleValueTestState, DoubleValueAction> rootNode= new TreeNode<DoubleValueTestState,

@@ -1,5 +1,6 @@
 package runnables;
 
+import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 
@@ -28,6 +29,10 @@ public class PolygoneTest {
 
 		Vector2 aVector = new Vector2(3, 3);
 		System.out.println(polygone.contains(5, 5));
+		
+		
+		Intersector anIntersector = new Intersector();
+		// anIntersector.intersectLinePlane(x, y, z, x2, y2, z2, plane, intersection)
 
 	}
 
