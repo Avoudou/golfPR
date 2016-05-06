@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class TreeNode<E extends SearchState, Action extends AbstractAction<E>> {
 
 	private E state;
+	/** Action that led to this Node(state) from the parent Node(state) */
 	private Action action;
 	private TreeNode<E, Action> parentNode;
+	// not using this delete to be considered
 	private ArrayList<TreeNode<E, Action>> childNodeList = new ArrayList<>();// not needed???
-	private int nodeDeapth;
+	private int nodeDepth;
 	private double valueOfNode;
 
 	public TreeNode(TreeNode<E, Action> parentNode) {
@@ -33,11 +35,11 @@ public class TreeNode<E extends SearchState, Action extends AbstractAction<E>> {
 	}
 
 	public int getNodeDeapth() {
-		return nodeDeapth;
+		return nodeDepth;
 	}
 
 	public void setNodeDeapth(int deapth) {
-		this.nodeDeapth = deapth;
+		this.nodeDepth = deapth;
 	}
 
 	public double getValueOfNode() {

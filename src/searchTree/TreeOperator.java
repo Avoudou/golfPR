@@ -2,6 +2,7 @@ package searchTree;
 
 import nodeGenerationPackg.NodeGenerator;
 
+/** Main class that performs the search process */
 public class TreeOperator<E extends SearchState, Action extends AbstractAction<E>> {
 
 	private final int noOfGenerChild = 1000;
@@ -31,6 +32,10 @@ public class TreeOperator<E extends SearchState, Action extends AbstractAction<E
 
 	}
 
+	/**
+	 * expands the nodes of the specified depth by adding their children to the a new priority queue in the SearchTree
+	 * instance used
+	 */
 	public void expandDeapth(int deapth) {
 		// System.out.println("Expanding");
 		int nodesToExpand = Math.min(noOfParents, searchTree.getListOfNodes(deapth).size());

@@ -2,7 +2,7 @@ package searchTree;
 
 import java.util.Comparator;
 
-
+//Class used for the priority queue implementation in the SearchTree class
 public class NodeComparator<E extends SearchState, Action extends AbstractAction<E>> implements
 		Comparator<TreeNode<E, ?>> {
 
