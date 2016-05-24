@@ -20,6 +20,7 @@ public class TreeOperator<E extends SearchState, Action extends AbstractAction<E
 		searchTree.addNode(rootNode);
 	}
 
+	/** Main search method */
 	public TreeNode<E, Action> runSearch() {
 		int depth = 0;
 		System.out.println("Running search");

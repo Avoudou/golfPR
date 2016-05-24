@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+//class  used for storing retrieving nodes according to their value
 public class SearchTree<E extends SearchState, Action extends AbstractAction<E>> {
 	
 

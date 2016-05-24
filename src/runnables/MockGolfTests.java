@@ -16,8 +16,8 @@ public class MockGolfTests {
 	public static void main(String[] args) {
 
 
-		Vector2 startPosit = new Vector2(69, -0);
-		Vector2 targetPosit = new Vector2(-230, 60);
+		Vector2 startPosit = new Vector2(69, 100);
+		Vector2 targetPosit = new Vector2(-250, -70);
 
 		GolfBall ball = new GolfBall(startPosit);
 		GolfHole target = new GolfHole(targetPosit);
