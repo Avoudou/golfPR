@@ -27,7 +27,7 @@ public class TreeOperator<E extends SearchState, Action extends AbstractAction<E
 		while (!goalTester.test(searchTree.getListOfNodes(depth).peek().getState()) && depth < 50) {
 			expandDeapth(depth);
 			depth++;
-			// System.out.println(deapth + " " + searchTree.getListOfNodes(deapth).peek().getNodeDeapth());
+			// System.out.println(depth + " " + searchTree.getListOfNodes(depth).peek().getNodeDeapth());
 		}
 		return searchTree.getListOfNodes(depth).poll();
 
